@@ -1,346 +1,427 @@
 <!DOCTYPE html>
 <html lang="fr" class="scroll-smooth">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fondation Masewo Marthe (FMM)</title>
-  <meta name="description" content="Fondation Masewo Marthe - Charité, Sérénité, Respect. Autonomisation et développement communautaire en RDC." />
-  
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            fmmNavy: '#162b58',    /* Primary Base */
-            fmmNavyDark: '#0e1d3e',/* Deep Navy for Footers/Hover */
-            fmmGold: '#e3ad25',    /* Primary Action Accent */
-            fmmGoldHover: '#c89518',
-            fmmPurple: '#5c2d83',  /* Subtle Secondary Accent */
-            fmmGreen: '#617a2b',   /* Subtle Secondary Accent */
-          }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fondation Masewo Marthe (FMM)</title>
+    <meta name="description"
+        content="Fondation Masewo Marthe - Charité, Sérénité, Respect. Autonomisation et développement communautaire en RDC." />
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fmmNavy: '#162b58',    /* Primary Base */
+                        fmmNavyDark: '#0e1d3e',/* Deep Navy for Footers/Hover */
+                        fmmGold: '#e3ad25',    /* Primary Action Accent */
+                        fmmGoldHover: '#c89518',
+                        fmmPurple: '#5c2d83',  /* Subtle Secondary Accent */
+                        fmmGreen: '#617a2b',   /* Subtle Secondary Accent */
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
+    </script>
 </head>
+
 <body class="bg-slate-50 text-slate-800 font-sans antialiased">
 
-  <!-- NAVIGATION -->
-  <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
-      
-      <!-- Brand & Logo -->
-      <a href="#" class="flex items-center gap-3">
-        <img src="logo.png" alt="FMM Logo" class="h-20 w-20 object-contain" />
-        <div>
-          <span class="font-extrabold text-base sm:text-lg text-fmmNavy block leading-tight">FONDATION MASEWO MARTHE</span>
-          <span class="text-xs font-bold text-fmmGold tracking-wider uppercase">Charité • Sérénité • Respect</span>
+    <!-- NAVIGATION -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 h-24 flex items-center justify-between">
+
+            <!-- Brand & Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <img src="logo.png" alt="FMM Logo" class="h-20 w-20 object-contain" />
+                <div>
+                    <span class="font-extrabold text-base sm:text-lg text-fmmNavy block leading-tight">FONDATION MASEWO
+                        MARTHE</span>
+                    <span class="text-xs font-bold text-fmmGold tracking-wider uppercase">Charité • Sérénité •
+                        Respect</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links & Language Switcher -->
+            <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-700">
+                <a href="#about" class="hover:text-fmmGold transition-colors">
+                    <span class="lang-fr">À Propos</span><span class="lang-en hidden">About Us</span>
+                </a>
+                <a href="#governance" class="hover:text-fmmGold transition-colors">
+                    <span class="lang-fr">Gouvernance</span><span class="lang-en hidden">Governance</span>
+                </a>
+                <a href="#actions" class="hover:text-fmmGold transition-colors">
+                    <span class="lang-fr">Missions</span><span class="lang-en hidden">Missions</span>
+                </a>
+                <a href="#contact" class="hover:text-fmmGold transition-colors">Contact</a>
+
+                <!-- Language Switcher Toggle -->
+                <button onclick="toggleLanguage()"
+                    class="flex items-center gap-1 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-fmmNavy transition-all">
+                    <span id="lang-btn-text">🌐 EN</span>
+                </button>
+
+                <a href="#contact"
+                    class="bg-fmmGold hover:bg-fmmGoldHover text-fmmNavy font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-md">
+                    <span class="lang-fr">Nous Soutenir</span><span class="lang-en hidden">Support Us</span>
+                </a>
+            </div>
         </div>
-      </a>
-      
-      <!-- Desktop Links & Language Switcher -->
-      <div class="hidden md:flex items-center space-x-6 text-sm font-medium text-slate-700">
-        <a href="#about" class="hover:text-fmmGold transition-colors">
-          <span class="lang-fr">À Propos</span><span class="lang-en hidden">About Us</span>
-        </a>
-        <a href="#governance" class="hover:text-fmmGold transition-colors">
-          <span class="lang-fr">Gouvernance</span><span class="lang-en hidden">Governance</span>
-        </a>
-        <a href="#actions" class="hover:text-fmmGold transition-colors">
-          <span class="lang-fr">Missions</span><span class="lang-en hidden">Missions</span>
-        </a>
-        <a href="#contact" class="hover:text-fmmGold transition-colors">Contact</a>
+    </nav>
 
-        <!-- Language Switcher Toggle -->
-        <button onclick="toggleLanguage()" class="flex items-center gap-1 bg-slate-100 hover:bg-slate-200 px-3 py-1.5 rounded-lg border border-slate-300 text-xs font-bold text-fmmNavy transition-all">
-          <span id="lang-btn-text">🌐 EN</span>
-        </button>
-
-        <a href="#contact" class="bg-fmmGold hover:bg-fmmGoldHover text-fmmNavy font-bold text-sm px-5 py-2.5 rounded-lg transition-all shadow-md">
-          <span class="lang-fr">Nous Soutenir</span><span class="lang-en hidden">Support Us</span>
-        </a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- HERO SECTION -->
-  <section class="relative bg-fmmNavy text-white py-20 md:py-28 overflow-hidden">
-    <!-- Cleaned up background grid to match navy -->
-    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#e3ad25_1px,transparent_1px)] [background-size:20px_20px]"></div>
-    
-    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
-      <span class="inline-block px-4 py-1.5 bg-white/10 text-fmmGold border border-fmmGold/30 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-        <span class="lang-fr">République Démocratique du Congo</span>
-        <span class="lang-en hidden">Democratic Republic of the Congo</span>
-      </span>
-
-      <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-white">
-        <span class="lang-fr">Renforcer la résilience, favoriser l'autonomisation et bâtir l'avenir</span>
-        <span class="lang-en hidden">Strengthening resilience, fostering empowerment, and building the future</span>
-      </h1>
-
-      <p class="text-base md:text-lg text-slate-200 mb-8 max-w-2xl mx-auto leading-relaxed font-normal">
-        <span class="lang-fr">La Fondation Masewo Marthe (FMM) œuvre pour aider les plus vulnérables — démunis, veuves, orphelins et personnes vivant avec un handicap — à se prendre en charge au sein de leurs communautés.</span>
-        <span class="lang-en hidden">The Masewo Marthe Foundation (FMM) works to empower the most vulnerable — including the underprivileged, widows, orphans, and people with disabilities — to achieve self-reliance within their communities.</span>
-      </p>
-
-      <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="#about" class="bg-fmmGold hover:bg-fmmGoldHover text-fmmNavy font-bold px-7 py-3.5 rounded-lg shadow-lg transition-all text-center">
-          <span class="lang-fr">En savoir plus</span><span class="lang-en hidden">Learn More</span>
-        </a>
-        <a href="#contact" class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold px-7 py-3.5 rounded-lg transition-all text-center">
-          <span class="lang-fr">Nous Contacter</span><span class="lang-en hidden">Contact Us</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- MOTTO BAR (Integrated Navy & Gold) -->
-  <section class="bg-fmmNavyDark text-fmmGold py-4 border-y border-fmmGold/20 shadow-inner">
-    <div class="max-w-4xl mx-auto px-4 text-center font-bold text-xs sm:text-sm tracking-widest uppercase flex justify-center items-center gap-6 sm:gap-12">
-      <span>Charité</span>
-      <span class="text-fmmPurple">•</span>
-      <span>Sérénité</span>
-      <span class="text-fmmGreen">•</span>
-      <span>Respect</span>
-    </div>
-  </section>
-
-  <!-- À PROPOS / ABOUT -->
-  <section id="about" class="py-20 bg-white">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-fmmNavy mb-3">
-          <span class="lang-fr">À Propos de la FMM</span><span class="lang-en hidden">About FMM</span>
-        </h2>
-        <div class="w-16 h-1 bg-fmmGold mx-auto rounded-full"></div>
-      </div>
-      
-      <div class="grid md:grid-cols-2 gap-10 items-center">
-        <div class="space-y-4 text-slate-600 leading-relaxed text-sm md:text-base">
-          <p>
-            <span class="lang-fr">Conformément à nos statuts et au Règlement Intérieur (Art. 1), la <strong>Fondation Masewo Marthe (FMM)</strong> a pour mission principale d'accompagner les démunis, les veuves, les orphelins et les personnes souffrant de maladies chroniques ou de handicap.</span>
-            <span class="lang-en hidden">In accordance with our statutes and Internal Regulations (Art. 1), the <strong>Masewo Marthe Foundation (FMM)</strong> is dedicated to supporting the underprivileged, widows, orphans, and people living with chronic illnesses or disabilities.</span>
-          </p>
-          <p>
-            <span class="lang-fr">Créée à l'initiative de Mme. Masewo Marthe (Fondatrice), la FMM place la transparence, l'engagement communautaire et l'autonomisation au cœur de son fonctionnement.</span>
-            <span class="lang-en hidden">Founded on the initiative of Mrs. Masewo Marthe (Founder), FMM places transparency, community engagement, and empowerment at the core of its operations.</span>
-          </p>
-        </div>
-        
-        <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
-          <h3 class="font-bold text-fmmNavy text-base flex items-center gap-2">
-            <span class="w-2.5 h-2.5 rounded-full bg-fmmPurple"></span>
-            <span class="lang-fr">Membres et Adhésion (Art. 8)</span><span class="lang-en hidden">Membership Categories (Art. 8)</span>
-          </h3>
-          <ul class="space-y-3 text-sm text-slate-700">
-            <li class="flex items-start gap-2.5">
-              <span class="text-fmmGreen font-bold text-lg leading-none">✓</span>
-              <span><strong>Membre Fondateur :</strong> <span class="lang-fr">Garant moral, définit la vision et la mission.</span><span class="lang-en hidden">Moral guarantor, defines vision and strategy.</span></span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <span class="text-fmmGreen font-bold text-lg leading-none">✓</span>
-              <span><strong>Membres Actifs :</strong> <span class="lang-fr">Membres effectifs engagés dans les actions de terrain.</span><span class="lang-en hidden">Effective members involved in ground activities.</span></span>
-            </li>
-            <li class="flex items-start gap-2.5">
-              <span class="text-fmmGreen font-bold text-lg leading-none">✓</span>
-              <span><strong>Membres d'Honneur & Sympathisants :</strong> <span class="lang-fr">Soutien moral, matériel ou financier.</span><span class="lang-en hidden">Provide moral, material, or financial support.</span></span>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- GOUVERNANCE / GOVERNANCE -->
-  <section id="governance" class="py-20 bg-slate-100/70 border-y border-slate-200">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-fmmNavy mb-3">
-          <span class="lang-fr">Structure & Gouvernance</span><span class="lang-en hidden">Structure & Governance</span>
-        </h2>
-        <p class="text-slate-600 text-sm max-w-xl mx-auto">
-          <span class="lang-fr">Une organisation structurée garantissant la bonne gestion des projets et des ressources (Chapitre III).</span>
-          <span class="lang-en hidden">A structured organization guaranteeing transparent project and resource management (Chapter III).</span>
-        </p>
-      </div>
-
-      <div class="grid md:grid-cols-3 gap-6">
-        <div class="bg-white p-6 rounded-xl border border-slate-200/80 shadow-sm hover:border-fmmGold transition-all">
-          <div class="w-10 h-10 bg-amber-50 text-fmmGold font-bold rounded-lg flex items-center justify-center mb-4 text-lg">01</div>
-          <h3 class="text-lg font-bold text-fmmNavy mb-1">Le Fondateur</h3>
-          <p class="text-xs text-fmmPurple font-bold uppercase mb-3">Organe Suprême</p>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            <span class="lang-fr">Unique initiateur et garant moral. Il valide les projets, la politique budgétaire et les partenariats stratégiques de la FMM.</span>
-            <span class="lang-en hidden">Sole initiator and moral guarantor. Validates overall strategy, projects, budget guidelines, and strategic partnerships.</span>
-          </p>
+    <!-- HERO SECTION -->
+    <section class="relative bg-fmmNavy text-white py-20 md:py-28 overflow-hidden">
+        <!-- Cleaned up background grid to match navy -->
+        <div
+            class="absolute inset-0 opacity-10 bg-[radial-gradient(#e3ad25_1px,transparent_1px)] [background-size:20px_20px]">
         </div>
 
-        <div class="bg-white p-6 rounded-xl border border-slate-200/80 shadow-sm hover:border-fmmGold transition-all">
-          <div class="w-10 h-10 bg-amber-50 text-fmmGold font-bold rounded-lg flex items-center justify-center mb-4 text-lg">02</div>
-          <h3 class="text-lg font-bold text-fmmNavy mb-1">Conseil d'Administration</h3>
-          <p class="text-xs text-fmmPurple font-bold uppercase mb-3">Gestion & Conception</p>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            <span class="lang-fr">Conçoit et supervise l'exécution des projets, élabore les rapports financiers et administre le patrimoine sous la direction du Président.</span>
-            <span class="lang-en hidden">Designs and oversees project execution, prepares financial reports, and manages foundation assets.</span>
-          </p>
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <span
+                class="inline-block px-4 py-1.5 bg-white/10 text-fmmGold border border-fmmGold/30 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+                <span class="lang-fr">République Démocratique du Congo</span>
+                <span class="lang-en hidden">Democratic Republic of the Congo</span>
+            </span>
+
+            <h1 class="text-3xl md:text-5xl font-extrabold tracking-tight mb-6 leading-tight text-white">
+                <span class="lang-fr">Renforcer la résilience, favoriser l'autonomisation et bâtir l'avenir</span>
+                <span class="lang-en hidden">Strengthening resilience, fostering empowerment, and building the
+                    future</span>
+            </h1>
+
+            <p class="text-base md:text-lg text-slate-200 mb-8 max-w-2xl mx-auto leading-relaxed font-normal">
+                <span class="lang-fr">La Fondation Masewo Marthe (FMM) œuvre pour aider les plus vulnérables — démunis,
+                    veuves, orphelins et personnes vivant avec un handicap — à se prendre en charge au sein de leurs
+                    communautés.</span>
+                <span class="lang-en hidden">The Masewo Marthe Foundation (FMM) works to empower the most vulnerable —
+                    including the underprivileged, widows, orphans, and people with disabilities — to achieve
+                    self-reliance within their communities.</span>
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#about"
+                    class="bg-fmmGold hover:bg-fmmGoldHover text-fmmNavy font-bold px-7 py-3.5 rounded-lg shadow-lg transition-all text-center">
+                    <span class="lang-fr">En savoir plus</span><span class="lang-en hidden">Learn More</span>
+                </a>
+                <a href="#contact"
+                    class="bg-white/10 hover:bg-white/20 text-white border border-white/30 font-semibold px-7 py-3.5 rounded-lg transition-all text-center">
+                    <span class="lang-fr">Nous Contacter</span><span class="lang-en hidden">Contact Us</span>
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="bg-white p-6 rounded-xl border border-slate-200/80 shadow-sm hover:border-fmmGold transition-all">
-          <div class="w-10 h-10 bg-amber-50 text-fmmGold font-bold rounded-lg flex items-center justify-center mb-4 text-lg">03</div>
-          <h3 class="text-lg font-bold text-fmmNavy mb-1">Comité Exécutif</h3>
-          <p class="text-xs text-fmmPurple font-bold uppercase mb-3">Exécution Quotidienne</p>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            <span class="lang-fr">Géré par le Secrétaire Exécutif, les Conseillers et le Logisticien pour la mise en œuvre opérationnelle des projets sur le terrain.</span>
-            <span class="lang-en hidden">Led by the Executive Secretary, Advisors, and Logistics officer for day-to-day operational field implementation.</span>
-          </p>
+    <!-- MOTTO BAR (Integrated Navy & Gold) -->
+    <section class="bg-fmmNavyDark text-fmmGold py-4 border-y border-fmmGold/20 shadow-inner">
+        <div
+            class="max-w-4xl mx-auto px-4 text-center font-bold text-xs sm:text-sm tracking-widest uppercase flex justify-center items-center gap-6 sm:gap-12">
+            <span>Charité</span>
+            <span class="text-fmmPurple">•</span>
+            <span>Sérénité</span>
+            <span class="text-fmmGreen">•</span>
+            <span>Respect</span>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- MISSIONS / ACTIONS -->
-  <section id="actions" class="py-20 bg-white">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-16">
-        <h2 class="text-3xl font-bold text-fmmNavy mb-3">
-          <span class="lang-fr">Nos Axes d'Intervention</span><span class="lang-en hidden">Our Key Focus Areas</span>
-        </h2>
-        <div class="w-16 h-1 bg-fmmGold mx-auto rounded-full mb-4"></div>
-        <p class="text-slate-600 text-sm max-w-xl mx-auto">
-          <span class="lang-fr">Des actions concrètes au service des populations les plus vulnérables en République Démocratique du Congo (Art. 1).</span>
-          <span class="lang-en hidden">Concrete actions supporting the most vulnerable populations in the Democratic Republic of the Congo (Art. 1).</span>
-        </p>
-      </div>
+    <!-- À PROPOS / ABOUT -->
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-fmmNavy mb-3">
+                    <span class="lang-fr">À Propos de la FMM</span><span class="lang-en hidden">About FMM</span>
+                </h2>
+                <div class="w-16 h-1 bg-fmmGold mx-auto rounded-full"></div>
+            </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Card 1: Education & Youth -->
-        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-fmmGold transition-all">
-          <div class="w-12 h-12 bg-amber-100 text-fmmGold rounded-xl flex items-center justify-center font-bold text-2xl mb-6">
-            🎓
-          </div>
-          <h3 class="text-xl font-bold text-fmmNavy mb-3">
-            <span class="lang-fr">Éducation & Enfance</span><span class="lang-en hidden">Education & Youth</span>
-          </h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            <span class="lang-fr">Accompagnement des orphelins et enfants vulnérables à travers la prise en charge scolaire, la fourniture de matériel et le renforcement des structures éducatives.</span>
-            <span class="lang-en hidden">Supporting orphans and vulnerable children through school fee assistance, educational supplies, and strengthening learning environments.</span>
-          </p>
+            <div class="grid md:grid-cols-2 gap-10 items-center">
+                <div class="space-y-4 text-slate-600 leading-relaxed text-sm md:text-base">
+                    <p>
+                        <span class="lang-fr">Conformément à nos statuts et au Règlement Intérieur (Art. 1), la
+                            <strong>Fondation Masewo Marthe (FMM)</strong> a pour mission principale d'accompagner les
+                            démunis, les veuves, les orphelins et les personnes souffrant de maladies chroniques ou de
+                            handicap.</span>
+                        <span class="lang-en hidden">In accordance with our statutes and Internal Regulations (Art. 1),
+                            the <strong>Masewo Marthe Foundation (FMM)</strong> is dedicated to supporting the
+                            underprivileged, widows, orphans, and people living with chronic illnesses or
+                            disabilities.</span>
+                    </p>
+                    <p>
+                        <span class="lang-fr">Créée à l'initiative de Mme. Masewo Marthe (Fondatrice), la FMM place la
+                            transparence, l'engagement communautaire et l'autonomisation au cœur de son
+                            fonctionnement.</span>
+                        <span class="lang-en hidden">Founded on the initiative of Mrs. Masewo Marthe (Founder), FMM
+                            places transparency, community engagement, and empowerment at the core of its
+                            operations.</span>
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+                    <h3 class="font-bold text-fmmNavy text-base flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-fmmPurple"></span>
+                        <span class="lang-fr">Membres et Adhésion (Art. 8)</span><span class="lang-en hidden">Membership
+                            Categories (Art. 8)</span>
+                    </h3>
+                    <ul class="space-y-3 text-sm text-slate-700">
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-fmmGreen font-bold text-lg leading-none">✓</span>
+                            <span><strong>Membre Fondateur :</strong> <span class="lang-fr">Garant moral, définit la
+                                    vision et la mission.</span><span class="lang-en hidden">Moral guarantor, defines
+                                    vision and strategy.</span></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-fmmGreen font-bold text-lg leading-none">✓</span>
+                            <span><strong>Membres Actifs :</strong> <span class="lang-fr">Membres effectifs engagés dans
+                                    les actions de terrain.</span><span class="lang-en hidden">Effective members
+                                    involved in ground activities.</span></span>
+                        </li>
+                        <li class="flex items-start gap-2.5">
+                            <span class="text-fmmGreen font-bold text-lg leading-none">✓</span>
+                            <span><strong>Membres d'Honneur & Sympathisants :</strong> <span class="lang-fr">Soutien
+                                    moral, matériel ou financier.</span><span class="lang-en hidden">Provide moral,
+                                    material, or financial support.</span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Card 2: Women Empowerment -->
-        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-fmmGold transition-all">
-          <div class="w-12 h-12 bg-purple-100 text-fmmPurple rounded-xl flex items-center justify-center font-bold text-2xl mb-6">
-            👩‍🌾
-          </div>
-          <h3 class="text-xl font-bold text-fmmNavy mb-3">
-            <span class="lang-fr">Autonomisation des Veuves & Femmes</span><span class="lang-en hidden">Empowerment of Widows & Women</span>
-          </h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            <span class="lang-fr">Soutien aux veuves et femmes démunies par des formations professionnelles, l'apprentissage de métiers et le renforcement d'activités génératrices de revenus.</span>
-            <span class="lang-en hidden">Supporting widows and underprivileged women through vocational training, skills development, and income-generating initiatives.</span>
-          </p>
+    <!-- GOUVERNANCE / GOVERNANCE -->
+    <section id="governance" class="py-20 bg-slate-100/70 border-y border-slate-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-fmmNavy mb-3">
+                    <span class="lang-fr">Structure & Gouvernance</span><span class="lang-en hidden">Structure &
+                        Governance</span>
+                </h2>
+                <p class="text-slate-600 text-sm max-w-xl mx-auto">
+                    <span class="lang-fr">Une organisation structurée garantissant la bonne gestion des projets et des
+                        ressources (Chapitre III).</span>
+                    <span class="lang-en hidden">A structured organization guaranteeing transparent project and resource
+                        management (Chapter III).</span>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div
+                    class="bg-white p-6 rounded-xl border border-slate-200/80 shadow-sm hover:border-fmmGold transition-all">
+                    <div
+                        class="w-10 h-10 bg-amber-50 text-fmmGold font-bold rounded-lg flex items-center justify-center mb-4 text-lg">
+                        01</div>
+                    <h3 class="text-lg font-bold text-fmmNavy mb-1">Le Fondateur</h3>
+                    <p class="text-xs text-fmmPurple font-bold uppercase mb-3">Organe Suprême</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        <span class="lang-fr">Unique initiateur et garant moral. Il valide les projets, la politique
+                            budgétaire et les partenariats stratégiques de la FMM.</span>
+                        <span class="lang-en hidden">Sole initiator and moral guarantor. Validates overall strategy,
+                            projects, budget guidelines, and strategic partnerships.</span>
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-6 rounded-xl border border-slate-200/80 shadow-sm hover:border-fmmGold transition-all">
+                    <div
+                        class="w-10 h-10 bg-amber-50 text-fmmGold font-bold rounded-lg flex items-center justify-center mb-4 text-lg">
+                        02</div>
+                    <h3 class="text-lg font-bold text-fmmNavy mb-1">Conseil d'Administration</h3>
+                    <p class="text-xs text-fmmPurple font-bold uppercase mb-3">Gestion & Conception</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        <span class="lang-fr">Conçoit et supervise l'exécution des projets, élabore les rapports
+                            financiers et administre le patrimoine sous la direction du Président.</span>
+                        <span class="lang-en hidden">Designs and oversees project execution, prepares financial reports,
+                            and manages foundation assets.</span>
+                    </p>
+                </div>
+
+                <div
+                    class="bg-white p-6 rounded-xl border border-slate-200/80 shadow-sm hover:border-fmmGold transition-all">
+                    <div
+                        class="w-10 h-10 bg-amber-50 text-fmmGold font-bold rounded-lg flex items-center justify-center mb-4 text-lg">
+                        03</div>
+                    <h3 class="text-lg font-bold text-fmmNavy mb-1">Comité Exécutif</h3>
+                    <p class="text-xs text-fmmPurple font-bold uppercase mb-3">Exécution Quotidienne</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        <span class="lang-fr">Géré par le Secrétaire Exécutif, les Conseillers et le Logisticien pour la
+                            mise en œuvre opérationnelle des projets sur le terrain.</span>
+                        <span class="lang-en hidden">Led by the Executive Secretary, Advisors, and Logistics officer for
+                            day-to-day operational field implementation.</span>
+                    </p>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <!-- Card 3: Health & Disability -->
-        <div class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-fmmGold transition-all">
-          <div class="w-12 h-12 bg-emerald-100 text-fmmGreen rounded-xl flex items-center justify-center font-bold text-2xl mb-6">
-            🏥
-          </div>
-          <h3 class="text-xl font-bold text-fmmNavy mb-3">
-            <span class="lang-fr">Santé & Inclusivité</span><span class="lang-en hidden">Health & Inclusion</span>
-          </h3>
-          <p class="text-slate-600 text-sm leading-relaxed">
-            <span class="lang-fr">Assistance aux personnes vivant avec un handicap ou atteintes de maladies chroniques afin d'améliorer leur qualité de vie et favoriser leur intégration sociale.</span>
-            <span class="lang-en hidden">Assistance for individuals living with disabilities or chronic illnesses to improve their quality of life and promote social inclusion.</span>
-          </p>
+    <!-- MISSIONS / ACTIONS -->
+    <section id="actions" class="py-20 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-fmmNavy mb-3">
+                    <span class="lang-fr">Nos Axes d'Intervention</span><span class="lang-en hidden">Our Key Focus
+                        Areas</span>
+                </h2>
+                <div class="w-16 h-1 bg-fmmGold mx-auto rounded-full mb-4"></div>
+                <p class="text-slate-600 text-sm max-w-xl mx-auto">
+                    <span class="lang-fr">Des actions concrètes au service des populations les plus vulnérables en
+                        République Démocratique du Congo (Art. 1).</span>
+                    <span class="lang-en hidden">Concrete actions supporting the most vulnerable populations in the
+                        Democratic Republic of the Congo (Art. 1).</span>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1: Education & Youth -->
+                <div
+                    class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-fmmGold transition-all">
+                    <div
+                        class="w-12 h-12 bg-amber-100 text-fmmGold rounded-xl flex items-center justify-center font-bold text-2xl mb-6">
+                        🎓
+                    </div>
+                    <h3 class="text-xl font-bold text-fmmNavy mb-3">
+                        <span class="lang-fr">Éducation & Enfance</span><span class="lang-en hidden">Education &
+                            Youth</span>
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        <span class="lang-fr">Accompagnement des orphelins et enfants vulnérables à travers la prise en
+                            charge scolaire, la fourniture de matériel et le renforcement des structures
+                            éducatives.</span>
+                        <span class="lang-en hidden">Supporting orphans and vulnerable children through school fee
+                            assistance, educational supplies, and strengthening learning environments.</span>
+                    </p>
+                </div>
+
+                <!-- Card 2: Support for Remote Areas / Villages -->
+                <div
+                    class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-fmmGold transition-all">
+                    <div
+                        class="w-12 h-12 bg-amber-100 text-fmmGold rounded-xl flex items-center justify-center font-bold text-2xl mb-6">
+                        🏡
+                    </div>
+                    <h3 class="text-xl font-bold text-fmmNavy mb-3">
+                        <span class="lang-fr">Soutien aux Zones Reculées</span><span class="lang-en hidden">Support for
+                            Remote Areas</span>
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        <span class="lang-fr">Intervention directe et accompagnement des communautés en zones rurales et
+                            villages isolés à travers l'amélioration des conditions de vie, le développement
+                            communautaire et le soutien aux ménages défavorisés.</span>
+                        <span class="lang-en hidden">Direct support for rural communities and isolated villages by
+                            improving living conditions, fostering community development, and assisting disadvantaged
+                            households.</span>
+                    </p>
+                </div>
+
+                <!-- Card 3: Health & Disability -->
+                <div
+                    class="bg-slate-50 p-8 rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-md hover:border-fmmGold transition-all">
+                    <div
+                        class="w-12 h-12 bg-emerald-100 text-fmmGreen rounded-xl flex items-center justify-center font-bold text-2xl mb-6">
+                        🏥
+                    </div>
+                    <h3 class="text-xl font-bold text-fmmNavy mb-3">
+                        <span class="lang-fr">Santé & Inclusivité</span><span class="lang-en hidden">Health &
+                            Inclusion</span>
+                    </h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        <span class="lang-fr">Assistance aux personnes vivant avec un handicap ou atteintes de maladies
+                            chroniques afin d'améliorer leur qualité de vie et favoriser leur intégration
+                            sociale.</span>
+                        <span class="lang-en hidden">Assistance for individuals living with disabilities or chronic
+                            illnesses to improve their quality of life and promote social inclusion.</span>
+                    </p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- CONTACT & NETLIFY FORM -->
-  <section id="contact" class="py-20 bg-white">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-fmmNavy mb-3">Contactez-nous</h2>
-        <p class="text-slate-600 text-sm">
-          <span class="lang-fr">Pour toute question, adhésion ou proposition de partenariat.</span>
-          <span class="lang-en hidden">For inquiries, membership requests, or partnership proposals.</span>
-        </p>
-      </div>
+    <!-- CONTACT & NETLIFY FORM -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-fmmNavy mb-3">Contactez-nous</h2>
+                <p class="text-slate-600 text-sm">
+                    <span class="lang-fr">Pour toute question, adhésion ou proposition de partenariat.</span>
+                    <span class="lang-en hidden">For inquiries, membership requests, or partnership proposals.</span>
+                </p>
+            </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
-        <!-- Direct Details -->
-        <div class="space-y-6 text-sm">
-          <div>
-            <h4 class="font-bold text-fmmNavy mb-1">Siège Social</h4>
-            <p class="text-slate-600 leading-relaxed">Commune de KIMBANSEKE<br>Kinshasa, RDC</p>
-          </div>
-          <div>
-            <h4 class="font-bold text-fmmNavy mb-1">Email Officiel</h4>
-            <a href="mailto:info@fondationmasewomarthe.org" class="text-fmmGold hover:underline font-bold">info@fondationmasewomarthe.org</a>
-          </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Direct Details -->
+                <div class="space-y-6 text-sm">
+                    <div>
+                        <h4 class="font-bold text-fmmNavy mb-1">Siège Social</h4>
+                        <p class="text-slate-600 leading-relaxed">Commune de KIMBANSEKE<br>Kinshasa, RDC</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-fmmNavy mb-1">Email Officiel</h4>
+                        <a href="mailto:info@fondationmasewomarthe.org"
+                            class="text-fmmGold hover:underline font-bold">info@fondationmasewomarthe.org</a>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form name="contact-fmm" method="POST" data-netlify="true" class="md:col-span-2 space-y-4">
+                    <input type="hidden" name="form-name" value="contact-fmm" />
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Nom / Name</label>
+                        <input type="text" name="name" required
+                            class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fmmGold focus:border-fmmGold outline-none text-sm transition-all" />
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Email</label>
+                        <input type="email" name="email" required
+                            class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fmmGold focus:border-fmmGold outline-none text-sm transition-all" />
+                    </div>
+
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Message</label>
+                        <textarea name="message" rows="4" required
+                            class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fmmGold focus:border-fmmGold outline-none text-sm transition-all"></textarea>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full bg-fmmNavy hover:bg-fmmNavyDark text-white font-bold py-3.5 rounded-lg transition-colors text-sm shadow-md">
+                        <span class="lang-fr">Envoyer le message</span><span class="lang-en hidden">Send Message</span>
+                    </button>
+                </form>
+            </div>
         </div>
+    </section>
 
-        <!-- Form -->
-        <form name="contact-fmm" method="POST" data-netlify="true" class="md:col-span-2 space-y-4">
-          <input type="hidden" name="form-name" value="contact-fmm" />
+    <!-- FOOTER -->
+    <footer class="bg-fmmNavyDark text-slate-400 py-8 text-xs border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 text-center space-y-2">
+            <p class="text-slate-200 font-bold">Fondation Masewo Marthe « FMM »</p>
+            <p>Kinshasa, République Démocratique du Congo</p>
+            <p class="text-slate-500">© 2026 Fondation Masewo Marthe. Tous droits réservés.</p>
+        </div>
+    </footer>
 
-          <div>
-            <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Nom / Name</label>
-            <input type="text" name="name" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fmmGold focus:border-fmmGold outline-none text-sm transition-all" />
-          </div>
+    <!-- SCRIPT FOR LANGUAGE TOGGLE -->
+    <script>
+        let currentLang = 'fr';
+        function toggleLanguage() {
+            const frElements = document.querySelectorAll('.lang-fr');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btnText = document.getElementById('lang-btn-text');
 
-          <div>
-            <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Email</label>
-            <input type="email" name="email" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fmmGold focus:border-fmmGold outline-none text-sm transition-all" />
-          </div>
-
-          <div>
-            <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">Message</label>
-            <textarea name="message" rows="4" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:ring-2 focus:ring-fmmGold focus:border-fmmGold outline-none text-sm transition-all"></textarea>
-          </div>
-
-          <button type="submit" class="w-full bg-fmmNavy hover:bg-fmmNavyDark text-white font-bold py-3.5 rounded-lg transition-colors text-sm shadow-md">
-            <span class="lang-fr">Envoyer le message</span><span class="lang-en hidden">Send Message</span>
-          </button>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-fmmNavyDark text-slate-400 py-8 text-xs border-t border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 text-center space-y-2">
-      <p class="text-slate-200 font-bold">Fondation Masewo Marthe « FMM »</p>
-      <p>Kinshasa, République Démocratique du Congo</p>
-      <p class="text-slate-500">© 2026 Fondation Masewo Marthe. Tous droits réservés.</p>
-    </div>
-  </footer>
-
-  <!-- SCRIPT FOR LANGUAGE TOGGLE -->
-  <script>
-    let currentLang = 'fr';
-    function toggleLanguage() {
-      const frElements = document.querySelectorAll('.lang-fr');
-      const enElements = document.querySelectorAll('.lang-en');
-      const btnText = document.getElementById('lang-btn-text');
-
-      if (currentLang === 'fr') {
-        frElements.forEach(el => el.classList.add('hidden'));
-        enElements.forEach(el => el.classList.remove('hidden'));
-        btnText.innerText = '🌐 FR';
-        currentLang = 'en';
-      } else {
-        enElements.forEach(el => el.classList.add('hidden'));
-        frElements.forEach(el => el.classList.remove('hidden'));
-        btnText.innerText = '🌐 EN';
-        currentLang = 'fr';
-      }
-    }
-  </script>
+            if (currentLang === 'fr') {
+                frElements.forEach(el => el.classList.add('hidden'));
+                enElements.forEach(el => el.classList.remove('hidden'));
+                btnText.innerText = '🌐 FR';
+                currentLang = 'en';
+            } else {
+                enElements.forEach(el => el.classList.add('hidden'));
+                frElements.forEach(el => el.classList.remove('hidden'));
+                btnText.innerText = '🌐 EN';
+                currentLang = 'fr';
+            }
+        }
+    </script>
 </body>
+
 </html>
